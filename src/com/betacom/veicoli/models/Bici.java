@@ -46,17 +46,11 @@ public class Bici extends Veicoli{
 		this.pieghevole = pieghevole;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "Bici [numeroCorone=" + numeroCorone + ", numeroMarce=" + numeroMarce + ", tipoFreno=" + tipoFreno
-				+ ", tipoSospenzione=" + tipoSospenzione + ", pieghevole=" + pieghevole + ", getId()=" + getId()
-				+ ", getTipoVeicolo()=" + getTipoVeicolo() + ", getNumeroRuote()=" + getNumeroRuote()
-				+ ", getTipoAlimentazione()=" + getTipoAlimentazione() + ", getCategoria()=" + getCategoria()
-				+ ", getColore()=" + getColore() + ", getMarca()=" + getMarca() + ", getAnnoProduzione()="
-				+ getAnnoProduzione() + ", getModello()=" + getModello() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	} 
+	    return "Bici [" + getInfoVeicolo() + ", numeroCorone=" + numeroCorone + ", numeroMarce=" + numeroMarce + ", tipoFreno=" + tipoFreno
+	            + ", tipoSospenzione=" + tipoSospenzione + ", pieghevole=" + pieghevole + "]";
+	}
 	
 	
 }
