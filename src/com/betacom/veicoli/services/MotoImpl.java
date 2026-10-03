@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.betacom.veicoli.models.Macchina;
 import com.betacom.veicoli.models.Moto;
 import com.betacom.veicoli.models.Veicoli;
 

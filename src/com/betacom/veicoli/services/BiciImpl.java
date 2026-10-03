@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.betacom.veicoli.models.Bici;
-import com.betacom.veicoli.models.Moto;
 import com.betacom.veicoli.models.Veicoli;
 
 public class BiciImpl implements VeicoliInterface{

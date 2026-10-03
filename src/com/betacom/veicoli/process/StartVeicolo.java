@@ -12,7 +12,6 @@ import com.betacom.veicoli.services.MotoImpl;
 
 public class StartVeicolo implements GeneralInterface{
 	
-	private List<Veicoli> veicoli;
 	private Set<String> targhe; //utilizziamo il Set per non permettere duplicati
 	
 	private MacchinaImpl macchinaImpl; 
@@ -22,7 +21,6 @@ public class StartVeicolo implements GeneralInterface{
 
 	public StartVeicolo(List<Veicoli> veicoli) {
 		super();
-		this.veicoli = veicoli;
 		this.targhe = new HashSet<String>();
 		this.macchinaImpl = new MacchinaImpl(veicoli, targhe);
 		this.motoImpl = new MotoImpl(veicoli, targhe);
