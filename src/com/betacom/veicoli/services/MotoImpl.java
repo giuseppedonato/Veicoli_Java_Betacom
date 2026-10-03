@@ -3,19 +3,22 @@ package com.betacom.veicoli.services;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import com.betacom.veicoli.models.Macchina;
 import com.betacom.veicoli.models.Moto;
 import com.betacom.veicoli.models.Veicoli;
 
 public class MotoImpl implements VeicoliInterface{
 
 	private List<Veicoli> veicoli;
+	private Set<String> targhe;
 	
 	
-	
-	public MotoImpl(List<Veicoli> veicoli) {
+	public MotoImpl(List<Veicoli> veicoli, Set<String> targhe) {
 		super();
 		this.veicoli = veicoli;
+		this.targhe = targhe;
 	}
 
 	@Override
@@ -63,6 +66,12 @@ public class MotoImpl implements VeicoliInterface{
 
 	@Override
 	public void create(Veicoli veicolo) {
+		Moto moto = (Moto) veicolo; //cast necessario per il controllo della targa
+    	
+    	if(!targhe.add(moto.getTarga())) { //mi basta fare questo controllo siccome il Set non accetta duplicati
+    		 System.err.println("Error: number plate already exists: " + moto.getTarga());
+    		 return;
+    	}
 		veicoli.add(veicolo);
 	}
 
