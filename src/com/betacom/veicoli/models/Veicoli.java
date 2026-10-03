@@ -1,7 +1,7 @@
 package com.betacom.veicoli.models;
 
 public class Veicoli {
-	private static Integer counter = 0; //id univoco del record (ogetto)
+	private static Integer counter = 0; //id univoco del record (oggetto)
 	private Integer id;
 	private String tipoVeicolo;  //macchina, moto, bici
 	private Integer numeroRuote;
@@ -85,6 +85,20 @@ public class Veicoli {
 	public void setModello(String modello) {
 		this.modello = modello;
 	}
+
+	// abbiamo deciso di utilizzare questo metodo per mantenere l'output piuù pulito
+	public String getInfoVeicolo() {
+	    return "id=" + id
+	            + ", tipoVeicolo=" + tipoVeicolo
+	            + ", numeroRuote=" + numeroRuote
+	            + ", tipoAlimentazione=" + tipoAlimentazione
+	            + ", categoria=" + categoria
+	            + ", colore=" + colore
+	            + ", marca=" + marca
+	            + ", annoProduzione=" + annoProduzione
+	            + ", modello=" + modello;
+	}
+	
 	
 	
 }

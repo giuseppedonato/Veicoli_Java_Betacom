@@ -32,6 +32,20 @@ public class Macchina extends Veicoli{
 	public void setNumeroPorte(Integer numeroPorte) {
 		this.numeroPorte = numeroPorte;
 	}
+
+
+	@Override
+	public String toString() {
+	    return "Macchina [" + getInfoVeicolo() + ", targa=" + targa + ", cc=" + cc + ", numeroPorte=" + numeroPorte+ "]";
+	}
+
+
+	
+
+	
+
+	
+	
 	
 	
 }
