@@ -14,7 +14,6 @@ public class Bici extends Veicoli{
 	private Boolean pieghevole;
 	
 	
-	
 	public Integer getNumeroCorone() {
 		return numeroCorone;
 	}
