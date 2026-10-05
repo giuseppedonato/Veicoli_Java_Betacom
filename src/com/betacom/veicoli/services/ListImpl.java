@@ -8,10 +8,15 @@ public class ListImpl implements VeicoliInterface{
 
 	private List<Veicoli> veicoli;
 	
-	
 	public ListImpl(List<Veicoli> veicoli) {
 		super();
 		this.veicoli = veicoli;
+	}
+	
+	public void printList() {
+		for (Veicoli v : veicoli) {
+			System.out.println(v);
+		}
 	}
 
 	@Override
@@ -33,7 +38,7 @@ public class ListImpl implements VeicoliInterface{
 
 	@Override
 	public void create(Veicoli veicolo) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

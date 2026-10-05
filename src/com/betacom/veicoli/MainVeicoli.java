@@ -1,6 +1,7 @@
 package com.betacom.veicoli;
 
 import java.util.ArrayList;
+import com.betacom.veicoli.services.ListImpl;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,6 +32,10 @@ public class MainVeicoli {
 		StartVeicolo start = new StartVeicolo(veicoli);
 		start.execute(parameter);
 		
+		//stampa tutti i veicoli caricati
+		
+		
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digita la tipologia di veicolo per verificare la disponibilità");
 		String selected = sc.next();
@@ -45,7 +50,11 @@ public class MainVeicoli {
 
 		    } else if (selected.equalsIgnoreCase("bici") && v instanceof Bici) {
 		        System.out.println(v);
-		    } 
+		    } else if (selected.equalsIgnoreCase("list")) {
+		    	ListImpl listI = new ListImpl(veicoli);
+		    	listI.printList();
+		    	break;
+		    }
 		}
 		
 		sc.close();
@@ -53,7 +62,7 @@ public class MainVeicoli {
 		Singleton sing1 = Singleton.getInstance();
 		Singleton sing2 = Singleton.getInstance();
 		
-		System.out.println(sing1 == sing2);  //true perchè il metodo statico getInstance restituisce sempre la stessa istanza
+		System.out.println(sing1 == sing2);  //true perchè il metodo statico getInstance restituisce sempre la stessa istanza.
 			
 		
 }}
