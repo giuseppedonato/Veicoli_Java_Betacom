@@ -32,29 +32,47 @@ public class MainVeicoli {
 		StartVeicolo start = new StartVeicolo(veicoli);
 		start.execute(parameter);
 		
-		//stampa tutti i veicoli caricati
 		
 		
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digita la tipologia di veicolo per verificare la disponibilità");
 		String selected = sc.next();
-		
-		for (Veicoli v : veicoli) {
+		switch (selected.toLowerCase()) {
 
-		    if (selected.equalsIgnoreCase("macchina") && v instanceof Macchina) {
-		        System.out.println(v);
-
-		    } else if (selected.equalsIgnoreCase("moto") && v instanceof Moto) {
-		        System.out.println(v);
-
-		    } else if (selected.equalsIgnoreCase("bici") && v instanceof Bici) {
-		        System.out.println(v);
-		    } else if (selected.equalsIgnoreCase("list")) {
-		    	ListImpl listI = new ListImpl(veicoli);
-		    	listI.printList();
-		    	break;
+		case "macchina":
+		    for (Veicoli v : veicoli) {
+		        if (v instanceof Macchina) {
+		            System.out.println(v);
+		        }
 		    }
+		    break;
+
+		case "moto":
+		    for (Veicoli v : veicoli) {
+		        if (v instanceof Moto) {
+		            System.out.println(v);
+		        }
+		    }
+		    break;
+
+		case "bici":
+		    for (Veicoli v : veicoli) {
+		        if (v instanceof Bici) {
+		            System.out.println(v);
+		        }
+		    }
+		    break;
+
+		case "list":
+			//stampa tutti i veicoli caricati
+		    ListImpl listI = new ListImpl(veicoli);
+		    listI.printList();
+		    break;
+
+		default:
+		    System.err.println("Nessuna tipologia di veicolo trovata!");
+		    break;
 		}
 		
 		sc.close();
