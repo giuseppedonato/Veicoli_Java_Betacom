@@ -1,5 +1,6 @@
 package com.betacom.veicoli.services;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,8 +66,19 @@ public class MacchinaImpl implements VeicoliInterface {
     public void create(Veicoli veicolo) {
     	Macchina macchina = (Macchina) veicolo; //cast necessario per il controllo della targa
     	
+    	// Controllo anno di produzione
+        int annoCorrente = LocalDateTime.now().getYear();
+
+        if (macchina.getAnnoProduzione() > annoCorrente) {
+            System.err.println(
+                macchina.getModello() + " " +  macchina.getAnnoProduzione() + " -> l'anno è superiore alla data attuale: "
+                + annoCorrente
+            );
+            return;
+        }
+    	
     	if(!targhe.add(macchina.getTarga())) { //mi basta fare questo controllo siccome il Set non accetta duplicati
-    		 System.err.println("Error: number plate already exists: " + macchina.getTarga());
+    		 System.err.println("Errore: il numero di targa è gia presente nei nostri db" + macchina.getTarga());
     		 return;
     	}
     	
