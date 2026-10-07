@@ -10,16 +10,16 @@ import com.betacom.veicoli.services.BiciImpl;
 import com.betacom.veicoli.services.MacchinaImpl;
 import com.betacom.veicoli.services.MotoImpl;
 
-public class StartVeicolo implements GeneralInterface{
+public class StartProcess implements GeneralInterface{
 	
 	private Set<String> targhe; //utilizziamo il Set per non permettere duplicati
 	
-	private MacchinaImpl macchinaImpl; 
+	private MacchinaImpl macchinaImpl;
 	private MotoImpl motoImpl;
 	private BiciImpl biciImpl;
 	
 
-	public StartVeicolo(List<Veicoli> veicoli) {
+	public StartProcess(List<Veicoli> veicoli) {
 		super();
 		this.targhe = new HashSet<String>();
 		this.macchinaImpl = new MacchinaImpl(veicoli, targhe);
@@ -46,7 +46,7 @@ public class StartVeicolo implements GeneralInterface{
 		        	} else if (type.equals("bici")) {
 		        		biciImpl.add(newParams);
 		        	}
-		        }
+		        } 
 		    }
 		}
 	}
