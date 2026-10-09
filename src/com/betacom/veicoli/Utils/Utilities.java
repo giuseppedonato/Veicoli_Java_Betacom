@@ -1,4 +1,4 @@
-package com.betacom.veicoli.Utils;
+package com.betacom.veicoli.utils;
 
 public class Utilities {
 	

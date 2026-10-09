@@ -1,9 +1,12 @@
 package com.betacom.veicoli.process;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.betacom.veicoli.exception.VeicoliException;
 import com.betacom.veicoli.interfaces.GeneralInterface;
 import com.betacom.veicoli.models.Veicoli;
 import com.betacom.veicoli.services.BiciImpl;
@@ -49,4 +52,23 @@ public class StartProcess implements GeneralInterface{
 		        } 
 		    }
 		}
+	
+	
+	public void executeOperation(GeneralInterface myProcess, List<String> parameter) throws Exception{ // exception finale vuol dire -> Questa funzione puo generare un errore, la gestisce chi mi chiama.
+		try {
+			Method method = myProcess.getClass().getMethod("execute", List.class);
+			method.invoke(myProcess, parameter); // myProcess è l'oggetto su cui eseguire il metodo, parameter perchè il metodo dell'interfaccia ha il parametro
+			
+		} catch (SecurityException e) {
+			throw new VeicoliException("Errore di sicurezza: " + e.getMessage());
+		} catch (IllegalAccessException e) {
+			throw new VeicoliException("Errore IllegalAccess: " + e.getMessage());
+		} catch(IllegalArgumentException e) {
+			throw new VeicoliException("Errore IllegalArgument: " + e.getMessage());
+		} catch (InvocationTargetException e) {
+			throw new VeicoliException(e.getCause().getMessage());
+		} catch (NoSuchMethodException e) {
+			throw new VeicoliException("Metodo Execute non trovato");
+		}
+	}
 	}

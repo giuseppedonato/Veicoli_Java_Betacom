@@ -1,5 +1,8 @@
 package com.betacom.veicoli.models;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class Veicoli {
 	private static Integer counter = 0; //id univoco del record (oggetto)
 	private Integer id;

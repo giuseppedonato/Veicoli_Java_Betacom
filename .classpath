@@ -9,5 +9,8 @@
 	<classpathentry kind="lib" path="/Users/giuseppedonato/Desktop/lib/slf4j-api-2.0.9.jar"/>
 	<classpathentry kind="lib" path="/Users/giuseppedonato/Desktop/lib/slf4j-simple-2.0.9.jar"/>
 	<classpathentry kind="lib" path="/Users/giuseppedonato/Desktop/lib/lombok.jar"/>
+	<classpathentry kind="lib" path="/Users/giuseppedonato/Desktop/lib/jackson-annotations-2.20.jar"/>
+	<classpathentry kind="lib" path="/Users/giuseppedonato/Desktop/lib/jackson-core-2.20.0.jar"/>
+	<classpathentry kind="lib" path="/Users/giuseppedonato/Desktop/lib/jackson-databind-2.20.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,4 @@
-package com.betacom.veicoli.Exception;
+package com.betacom.veicoli.exception;
 
 public class VeicoliException extends RuntimeException{
 
